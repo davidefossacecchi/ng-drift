@@ -3,21 +3,21 @@
 This is a module that act as a wrapper for the [Drift](https://www.drift.com/) Live Chat JS APIs
 
 <h3>Installation</h3>
-1. Download the zip and properly link the lib/ng-drift.js file in your code
-2. Add 'ng-drift' as a dependency of your app
+* Download the zip and properly link the lib/ng-drift.js file in your code
+* Add 'ng-drift' as a dependency of your app
 ```
 	angular.module('yourApp', ['ng-drift']);
 ```
-3. Configure the provider properly with your key and your snippet version
+* Configure the provider properly with your key and your snippet version
 ```
 angular.module('yourApp')
 	.config(['ngDriftProvider',
 		function(ngDriftProvider){
-			ngDriftProvider.setKey('t2r46sixm3tp');
-			ngDriftProvider.setSnippetVersion('0.3.1');
+			ngDriftProvider.setKey('your_drift_key');
+			ngDriftProvider.setSnippetVersion('choosen_snippet_version');
 		}]);
 ```
-4. Bootstrap Drift injecting it in your module run function
+* Bootstrap Drift injecting it in your module run function
 ```
 angular.module('yourApp')
 	.run(
@@ -27,7 +27,7 @@ angular.module('yourApp')
 		}
 	)
 ```
-5. Inject Drift as dependency wherever you want to call the APIs
+* Inject Drift as dependency wherever you want to call the APIs
 ```
 angular.module('yourApp')
 	.controller('yourController',
