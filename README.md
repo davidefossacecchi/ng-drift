@@ -3,7 +3,18 @@
 This is a module that act as a wrapper for the [Drift](https://www.drift.com/) Live Chat JS APIs
 
 <h3>Installation</h3>
-* Download the zip and properly link the lib/ng-drift.js file in your code
+* Download the zip or install it through npm
+```
+	npm install --save ng-drift
+```
+* Properly link the lib/ng-drift.js file in your code
+```
+	<script src="path/to/ng-drift/lib/ng-drift.js"></script>
+```
+if you have installed it through npm, it will simply be
+```
+	<script src="node_modules/ng-drift/lib/ng-drift.js"></script>
+```
 * Add 'ng-drift' as a dependency of your app
 ```
 	angular.module('yourApp', ['ng-drift']);
