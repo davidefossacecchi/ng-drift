@@ -28,8 +28,30 @@
 		  								avatarUrl: 'http://67.media.tumblr.com/avatar_c2eaca284ff8_128.png'
 		  							})
 		  					},
-		  					ngDrift.hideWelcomeMessage
+		  					ngDrift.hideWelcomeMessage,
+		  					function(){
+		  						ngDrift.identify(
+		  							'2222',
+		  							{
+		  								email: 'dera@stromox.com',
+		  								name: 'Demitri Rasputin'
+		  							}
+		  						)
+		  					},
+		  					function(){
+		  						ngDrift.page('test_page');
+		  					},
+		  					function(){
+		  						ngDrift.track('testing', { step : 'event' });
+		  					},
+		  					ngDrift.debug
 		  				]
+
+		  				ngDrift.on({
+		  					message: function(event){
+		  						$scope.message = 'arrivò un messaggio';
+		  					}
+		  				})
 		  				
 		 				var int = $interval(
 		 					function(){
@@ -48,5 +70,6 @@
 	</head>
 	<body ng-app="test" ng-controller="testController">
 		<h1 ng-show="test_ended">TEST ENDED</h1>
+		<p>{{message}}</p>
 	</body>
 </html>
