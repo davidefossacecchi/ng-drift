@@ -7,43 +7,46 @@
 	  	<script src="config.js"></script>
 	  	<script>
 	  		angular.module('test')
-	  			.controller('testController', ['ngDrift', '$interval', function(ngDrift, $interval){
-	  				var i = 0;
-	  				var testingFns = [
-	  					ngDrift.hide,
-	  					ngDrift.show,
-	  					ngDrift.open,
-	  					ngDrift.close,
-	  					ngDrift.toggle,
-	  					ngDrift.toggle,
-	  					ngDrift.goToNewConversation,
-	  					ngDrift.close,
-	  					function(){
-	  						ngDrift.showWelcomeMessage(
-	  							{
-	  								showAvatar: true,
-	  								slide: true,
-	  								message: 'Hi good guy',
-	  								avatarUrl: 'http://67.media.tumblr.com/avatar_c2eaca284ff8_128.png'
-	  							})
-	  					},
-	  					ngDrift.hideWelcomeMessage
-	  				]
-	  				
-	 				var int = $interval(
-	 					function(){
-	 						testingFns[i]();
-	 						i++;
-	 						if(i === testingFns.length){
-	 							console.log('test finito');
-	 							$interval.cancel(int);
-	 						}
-	 					}, 5000
-	 				)
-	  			}])
+	  			.controller('testController', ['ngDrift', '$interval', '$scope',
+	  				function(ngDrift, $interval, $scope){
+		  				var i = 0;
+		  				var testingFns = [
+		  					ngDrift.hide,
+		  					ngDrift.show,
+		  					ngDrift.open,
+		  					ngDrift.close,
+		  					ngDrift.toggle,
+		  					ngDrift.toggle,
+		  					ngDrift.goToNewConversation,
+		  					ngDrift.close,
+		  					function(){
+		  						ngDrift.showWelcomeMessage(
+		  							{
+		  								showAvatar: true,
+		  								slide: true,
+		  								message: 'Hi good guy',
+		  								avatarUrl: 'http://67.media.tumblr.com/avatar_c2eaca284ff8_128.png'
+		  							})
+		  					},
+		  					ngDrift.hideWelcomeMessage
+		  				]
+		  				
+		 				var int = $interval(
+		 					function(){
+		 						testingFns[i]();
+		 						i++;
+		 						if(i === testingFns.length){
+		 							$scope.test_ended = true;
+		 							$interval.cancel(int);
+		 						}
+		 					}, 5000
+		 				)
+		  			}
+		  		])
 	  			
 	  	</script>
 	</head>
 	<body ng-app="test" ng-controller="testController">
+		<h1 ng-show="test_ended">TEST ENDED</h1>
 	</body>
 </html>
