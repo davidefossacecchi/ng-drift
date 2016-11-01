@@ -5,7 +5,9 @@ This is a module that act as a wrapper for the [Drift](https://www.drift.com/) L
 <h3>Installation</h3>
 1. Download the zip and properly link the lib/ng-drift.js file in your code
 2. Add 'ng-drift' as a dependency of your app
-```angular.module('yourApp', ['ng-drift']);```
+```
+	angular.module('yourApp', ['ng-drift']);
+```
 3. Configure the provider properly with your key and your snippet version
 ```angular.module('yourApp')
 	.config(['ngDriftProvider',
