@@ -1,0 +1,23 @@
+{
+  "name": "ng-drift",
+  "version": "0.1.0",
+  "description": "An Angular wrapper module for the Drift Live Chat",
+  "main": "lib/ng-drift.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidefossacecchi/ng-drift.git"
+  },
+  "keywords": [
+    "Drift",
+    "Chat",
+    "Angular"
+  ],
+  "author": "Davide Fossacecchi",
+  "license": "GPL v3",
+  "bugs": {
+    "url": "https://github.com/davidefossacecchi/ng-drift/issues"
+  }
+}
